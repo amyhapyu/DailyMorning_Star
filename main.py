@@ -96,7 +96,12 @@ def get_birthday(birthday, year, today):
         birth_date = year_date
         birth_day = str(birth_date.__sub__(today)).split(" ")[0]
     return birth_day
-
+# 彩虹屁 接口不稳定，所以失败的话会重新调用，直到成功+++++
+def get_words():
+  words = requests.get("https://api.shadiao.pro/chp")
+  if words.status_code != 200:
+    return get_words()
+  return words.json()['data']['text']
 
 def get_ciba():
     url = "http://open.iciba.com/dsapi/"
