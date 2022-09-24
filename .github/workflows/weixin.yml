@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule: 
     # 代表国际标准时间.
-    - cron: '*/2 * * * *'
+    - cron: '40 09 * * *'
 jobs:
 #将工作流程中运行的所有作业组合在一起
   build:
